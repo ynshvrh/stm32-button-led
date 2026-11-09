@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Saint Yan",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": 10.43,
+      "left": -96.98,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 92.4,
+      "left": 176.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.15,
+      "left": 172.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 294.2,
+      "left": 192,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "gnd1",
+      "top": 336,
+      "left": 268.2,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "nucleo:D3", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "led1:A", "green", [ "v-38.4", "h-1.2" ] ],
+    [ "led1:C", "nucleo:GND.9", "black", [ "v0" ] ],
+    [ "btn1:1.l", "nucleo:D2", "blue", [ "h0" ] ],
+    [ "btn1:2.r", "gnd1:GND", "black", [ "h19.4", "v0.2" ] ]
+  ],
+  "dependencies": {}
+}
